@@ -8,6 +8,7 @@ import { InstantSearch, SearchBox } from 'react-instantsearch';
 import searchClient from '../components/algolia'
 
 import replaceAndRemoveChar from "../utils/replaceAndRemoveChar"
+import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter()
@@ -26,8 +27,27 @@ export default function Home() {
         <SearchBox placeholder='What are you looking for?' onSubmit={() => router.push(`search/${searchQuery}`)}/>
 
         <button className='search-btn' onClick={() => router.push(`search/${searchQuery}`)}> 
-        Search
+        Find it!
         </button>
+      </div>
+      <div className='search-sugges-box'>
+      <Link
+      href={`/search/female-founder-suncreen-spf-50`}
+      className='homepage-search-suggestion'
+      >
+        <button >Female Founder <div>Sunscreen SPF 50</div> </button>
+        </Link>
+        <Link
+         href={`/search/vegan-shampoo-made-in-usa`}
+         className='homepage-search-suggestion'
+        >
+        <button >Vegan Shampoo <div>Made in the USA</div> </button>
+        </Link>
+        <Link
+         href={`/search/anti-cruelty-baby-lotion`}
+         className='homepage-search-suggestion'>
+        <button >Anti Cruelty <div>Baby Lotion</div> </button>
+        </Link>
       </div>
       <div className='footer'>
       <Footer />
