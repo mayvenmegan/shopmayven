@@ -8,12 +8,36 @@ body{
   width: 100%;
 }
 
-
+@keyframes colorChange {
+  0% {
+    color: rgba(32, 177, 76, 1); /* Start with full opacity red */
+  }
+  50% {
+    color: rgba(32, 177, 76, 0.5); /* Fade to transparent red */
+  }
+  50.1% {
+    color: rgba(255,90,22, 0.5); /* Start with transparent blue */
+  }
+  100% {
+    color: rgba(255,90,22, 1); /* Fade to full opacity blue */
+  }
+}
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 25px;
+  font-weight: 800;
+ color: #20b04b; 
+ color: rgba(32, 177, 76, 1);
+ animation: colorChange 1s infinite;
+}
 .header {
   display: flex;
   align-items: center;
-  min-height: 50px;
-  padding: 2rem 1rem;
+ 
+  padding: 1.2rem 1rem;
   border-bottom:5px solid rgb(255,90,22);
   color: #fff;
   margin-bottom: 1rem;
@@ -23,7 +47,6 @@ body{
 }
 
 .header a {
-
   text-decoration: none;
   font-family: 'Cabin', sans-serif;
   font-weight: 700;
@@ -33,7 +56,6 @@ body{
   align-items:center;
   justify-content:center;
   gap:10px;
-  /* font-size:3rem; */
 }
 
 
@@ -52,7 +74,7 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 40px;
+  padding: 50px 40px;
   align-items: center;
   gap: 20px;
 }
@@ -64,7 +86,7 @@ body{
   border-radius: 22px;
   font-size: 18px;
   font-weight: 500;
-  padding: 9px 22px;
+  padding: 10px 22px;
   cursor: pointer;
 }
 .search-section .search-btn:hover{
@@ -73,6 +95,10 @@ body{
 .ais-SearchBox-input {
   box-shadow: rgba(32, 176, 75, 0.3) 0 1px 4px 0 inset;
   border-radius: 22px;
+
+}
+.search-section .ais-SearchBox-input{
+  padding: 20px 40px;
 }
 .ais-SearchBox-input:focus {
   border-color: rgb(255,90,22);
@@ -91,21 +117,21 @@ body{
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
 }
 .search-sugges-box button{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px 25px;
+  padding: 18px 25px;
   border-radius: 12px;
   font-size: 20px;
   font-weight: 500;
   background: #ff9eb0;
   border:  2px solid #f0637d;
   color:  #fff5f7;
-  min-width: 200px;
+  min-width: 220px;
   cursor: pointer;
 }
 .search-sugges-box button:hover{
@@ -114,6 +140,12 @@ body{
 }
 .homepage-search-suggestion{
   text-decoration: none;
+}
+/* Homepage */
+.footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 /* Footer */
 
