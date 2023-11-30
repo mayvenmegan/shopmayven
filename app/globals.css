@@ -183,12 +183,12 @@ body{
   text-decoration: none;
 }
 @media screen and (max-width:1050px) {
-  /* .search-sugges-box{
+  .search-sugges-box{
     flex-direction: column;
   }
   .footer{
     position: relative !important;
-  } */
+  }
   .search-sugges-box button{
     padding: 15px 20px;
     font-size: 18px;
@@ -208,7 +208,7 @@ body{
 
 /* Homepage */
 .footer{
-  position: sticky;
+  position: fixed;
   width: 100%;
   bottom: 0;
 }
