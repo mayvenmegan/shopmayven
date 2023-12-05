@@ -10,6 +10,8 @@ import searchClient from '../components/algolia';
 import replaceAndRemoveChar from '../utils/replaceAndRemoveChar';
 import Link from 'next/link';
 
+import '../styles/homepage.css'
+
 export default function Home() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
@@ -40,7 +42,7 @@ export default function Home() {
         </button>
       </div>
       <div className='search-sugges-box'>
-        <div>
+
           <Link
             href={`/search/female-founder-suncreen-spf-50`}
             className='homepage-search-suggestion'
@@ -57,7 +59,6 @@ export default function Home() {
               Vegan Shampoo <div>Made in the USA</div>{' '}
             </button>
           </Link>
-        </div>
         <Link
           href={`/search/anti-cruelty-baby-lotion`}
           className='homepage-search-suggestion'
@@ -66,10 +67,18 @@ export default function Home() {
             Anti Cruelty <div>Baby Lotion</div>{' '}
           </button>
         </Link>
+        <Link
+          href={`/search/face-cream-paraben-free`}
+          className='homepage-search-suggestion'
+        >
+          <button>
+          Face Cream <div>Paraben Free</div>{' '}
+          </button>
+        </Link>
       </div>
-      <div className='footer'>
+
         <Footer />
-      </div>
+
     </InstantSearch>
   );
 }
