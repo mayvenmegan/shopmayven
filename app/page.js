@@ -16,15 +16,14 @@ export default function Home() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const handleChange = (e) => {
-    // console.log(e.uiState.dev_MAYVEN.query);
-    const query = e.uiState.dev_MAYVEN.query;
+    const query = e.uiState.dev_SHOPMAYVEN.query;
 
     setSearchQuery(replaceAndRemoveChar(query));
   };
   return (
     <InstantSearch
       searchClient={searchClient}
-      indexName='dev_MAYVEN'
+      indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
       onStateChange={handleChange}
     >
       <Header />
@@ -47,32 +46,32 @@ export default function Home() {
             href={`/search/female-founder-suncreen-spf-50`}
             className='homepage-search-suggestion'
           >
-            <button>
-              Female Founder <div>Sunscreen SPF 50</div>{' '}
+            <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>
+              Female Founder <div className='-mt-2'>Sunscreen SPF 50</div>{' '}
             </button>
           </Link>
           <Link
             href={`/search/vegan-shampoo-made-in-usa`}
             className='homepage-search-suggestion'
           >
-            <button>
-              Vegan Shampoo <div>Made in the USA</div>{' '}
+            <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>
+              Vegan Shampoo <div className='-mt-2'>Made in the USA</div>{' '}
             </button>
           </Link>
         <Link
           href={`/search/anti-cruelty-baby-lotion`}
           className='homepage-search-suggestion'
         >
-          <button>
-            Anti Cruelty <div>Baby Lotion</div>{' '}
+          <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>
+            Anti Cruelty <div className='-mt-2'>Baby Lotion</div>{' '}
           </button>
         </Link>
         <Link
           href={`/search/face-cream-paraben-free`}
           className='homepage-search-suggestion'
         >
-          <button>
-          Face Cream <div>Paraben Free</div>{' '}
+          <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>
+          Face Cream <div className='-mt-2'>Paraben Free</div>{' '}
           </button>
         </Link>
       </div>

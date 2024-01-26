@@ -1,89 +1,61 @@
 
 .search-sugges-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 10px;
-    max-width: 50%;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+  
 }
+
 
 .homepage-search-suggestion {
-    width: 100%;
-    text-decoration: none;
+  width: 100%;
+  text-decoration: none;
 }
-  
-  .search-sugges-box button{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 22px;
-    border-radius: 12px;
-    font-size: 20px;
-    font-weight: 500;
-    background: #ff9eb0;
-    border:  2px solid #f0637d;
-    color:  #fff5f7;
-    width: 100%;
-    cursor: pointer;
-  }
-  .search-sugges-box button:hover{
-    color:  #ffffff;
-    border:  2px solid #d33e59;
-  }
-  /* .footer{
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  } */
 
-
-  /* @media screen and (max-width:1170px) {
-    .footer{
-      position: relative !important;
-    }
-
-  } */
+.search-sugges-box button{
+  font-weight: 500;
+  background: #ff9eb0;
+  border:  2px solid #f0637d;
+  color:  #fff5f7;
+  width: 100%;
+  cursor: pointer;
+}
+.search-sugges-box button:hover{
+  color:  #ffffff;
+  border:  2px solid #d33e59;
+}
 
 
 
 @media (max-width: 800px) {
-    .search-sugges-box {
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    }
+  .search-sugges-box {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  }
 }
 
 
-  @media screen and (max-width:620px) {
+@media screen and (max-width:620px) {
 
-      .search-sugges-box{
-        max-width: 70%;
-      }
-  }
-  @media screen and (max-width:520px) {
-    .search-section{
-        display: flex;
-        flex-direction: column;
-        padding-left:20px;
-        padding-right: 20px;
+    .search-sugges-box{
+      max-width: 70%;
     }
-    .ais-SearchBox{
-        width: 100%;
-      }
-
-      .search-sugges-box{
-        max-width: 80%;
-      }
-
-      .search-sugges-box button{
-        padding: 14px 20px;
-        border-radius: 12px;
-        font-size: 18px;
-        /* font-weight: 500;
-        background: #ff9eb0;
-        border:  2px solid #f0637d;
-        color:  #fff5f7;
-        width: 100%;
-        cursor: pointer; */
-      }
+}
+@media screen and (max-width:520px) {
+  .search-section{
+      display: flex;
+      flex-direction: column;
+      padding-left:20px;
+      padding-right: 20px;
   }
+  .ais-SearchBox{
+      width: 100%;
+    }
+
+    .search-sugges-box{
+      max-width: 90%;
+    }
+
+
+}

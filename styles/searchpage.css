@@ -1,3 +1,7 @@
+
+.top-box-shadow{
+  box-shadow: 0 -40px 100px rgba(0, 0, 0, 0.3);
+}
 .searchpage{
   width: 100%;
 }
@@ -8,6 +12,12 @@
     gap: 30px;
    /* justify-content: center; */
 }
+@media screen and (max-width:440px) {
+  .searchpage-main{
+    padding: 20px ;
+  }
+}
+
 .searchpage .header{
     padding: 0.8rem;
 }
@@ -19,7 +29,7 @@
     gap: 0px; */
 }
 .clear-refinements{
-  max-width:25% ;
+  max-width:60% ;
   padding-bottom: 20px;
 }
 .ais-ClearRefinements-button{
@@ -44,10 +54,7 @@ width: 100%;
 
 
 
-#pagination {
-    margin: 2rem auto;
-    text-align: center;
-  }
+
   
   
   

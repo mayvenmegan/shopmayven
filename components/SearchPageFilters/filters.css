@@ -1,0 +1,90 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.close-filters-btn, .filters-drawer-bottom
+.ais-ClearRefinements {
+  flex: 1;
+}
+.filters-drawer-bottom .ais-ClearRefinements button {
+  height: fit-content;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+
+
+
+.filters-drawer-top .ais-Stats {
+  font-size: 1.1rem;
+  padding: 5px 0;
+}
+
+.filters-drawer-middle .clear-refinements {
+  display: none;
+}
+
+.filters-drawer-middle .filters-section {
+  width: fit-content;
+}
+
+.close-filters-btn .ais-ClearRefinements-button,
+.container-filters-footer .button,
+.open-filters-btn .ais-ClearRefinements-button,
+.container-filters-footer .button {
+  width: 100%;
+
+}
+.open-filters-button, .close-filters-btn{
+  background-image: linear-gradient(rgba(255,255,255,.34),rgba(255,255,255,0));
+}
+/* unclicked pagination button */
+.ais-Pagination-item.ais-Pagination-item--page a {
+  background-color: #ceffde;
+  background-image: linear-gradient(rgba(255,255,255,.34),rgba(255,255,255,0));
+  color: #0e9f3c;
+  border: none;
+  box-shadow: none;
+  border-radius: 6px !important;
+  padding: 18px;
+}
+/* fist page and lastpage button */
+.ais-Pagination-item--firstPage a, .ais-Pagination-item--lastPage a{
+  background-color: #ceffde;
+  background-image: linear-gradient(rgba(255,255,255,.34),rgba(255,255,255,0));
+  color: #0e9f3c;
+  border: none;
+  box-shadow: none;
+  border-radius: 6px !important;
+  padding: 18px;
+}
+/* Disabled first and last page */
+.ais-Pagination-item--disabled span.ais-Pagination-link{
+  background-image: linear-gradient(rgba(255,255,255,.34),rgba(255,255,255,0));
+  background-color: #e7feee;
+  box-shadow: none;
+  color: #97e9b1;
+  border: none;
+  box-shadow: none;
+  border-radius: 6px !important;
+  padding: 18px;
+}
+
+/* Active pagination button */
+.ais-Pagination-item.ais-Pagination-item--page.ais-Pagination-item--selected a {
+  background-color: #20b04b;
+  background-image: linear-gradient(rgba(255,255,255,.34),rgba(255,255,255,0));
+  color: #fff;
+  border-radius: 6px;
+}

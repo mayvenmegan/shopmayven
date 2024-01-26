@@ -16,8 +16,9 @@ const Indredients = ({productIngredients}) => {
         setShowIngredientsInDetail(!showIngredientsInDetail)
       }
   return (
-    <div className='product-ingredients'>
-                <button className='toggle-ingredients' onClick={toggleVisibility}>
+    <div className='flex gap-2.5 max-w-[98%]'>
+    {/* toggle filter button */}
+                <button className='w-[25px] mt-1 h-[25px] flex items-center justify-center cursor-pointer border border-[#20b04b] text-[#20b04b] bg-[#e8ffef] rounded' onClick={toggleVisibility}>
                 {
                     showIngredientsInDetail ?
                     <AiOutlineMinus />
@@ -26,10 +27,10 @@ const Indredients = ({productIngredients}) => {
                 }
                     
                 </button>
-                <div className='ingredients-box'>
+                <div className='max-w-[90%]'>
                 {
                     showIngredientsInDetail ?
-                    <div className='ingredients'><em>Ingredients: </em>
+                    <div className='ingredients'><em className='text-[#717171]'>Ingredients: </em>
                         { productIngredients.split('\n\n').map((str, index) =>{
                             return <span key={`${index}`}>
                             
@@ -45,7 +46,7 @@ const Indredients = ({productIngredients}) => {
                         }) }
                     </div>
                     :
-                    <div className='ingredients'><em>Ingredients: </em>
+                    <div className='ingredients'><em className='text-[#717171]'>Ingredients: </em>
                         {
                             shortenString(productIngredients, 120)   
                         }

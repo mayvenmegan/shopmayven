@@ -2,24 +2,19 @@
 import Link from 'next/link';
 import Header from '../../../components/header';
 import Footer from '../../../components/footer';
-import searchClient from '../../../components/algolia'
-import replaceAndRemoveChar from '../../../utils/replaceAndRemoveChar'
-import replaceAndRemoveDash from '../../../utils/replaceAndRemoveDash'
+import searchClient from '../../../components/algolia';
+import replaceAndRemoveChar from '../../../utils/replaceAndRemoveChar';
+import replaceAndRemoveDash from '../../../utils/replaceAndRemoveDash';
 import {
   InstantSearch,
   SearchBox,
   Hits,
-  RefinementList,
   Pagination,
   Stats,
   Configure,
-  ClearRefinements
 } from 'react-instantsearch';
-import { Panel } from 'react-instantsearch-dom';
 import '../../../styles/searchpage.css';
-
-
-
+import Filters from '@/components/SearchPageFilters/Filters';
 const SearchPage = ({ params }) => {
   // console.log(params.id)
 
@@ -36,9 +31,9 @@ const SearchPage = ({ params }) => {
   return (
     <InstantSearch
       searchClient={searchClient}
-      indexName='dev_MAYVEN'
+      indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
       initialUiState={{
-        dev_MAYVEN: {
+        dev_SHOPMAYVEN: {
           query: replaceAndRemoveDash(params.id),
           page: 1,
         },
@@ -46,54 +41,12 @@ const SearchPage = ({ params }) => {
     >
       <Configure hitsPerPage={12} />
       <div className='searchpage'>
-        <Header />
+        <Header py='py-6' />
 
         <div className='searchpage-main'>
+          {/* Filter */}
 
-          <div className='searchpage-main-left'>
-          <div className='clear-refinements'>
-          <ClearRefinements 
-          includedAttributes={['productType', 'brandValues', 'location.state', 'product/labelClaims', 'brand' ]} 
-          translations={{ resetButtonText: 'Reset' }}
-
-          />
-          </div>
-
-            <Panel header='CATEGORY'>
-              <RefinementList attribute={'productType'} />
-            </Panel>
-            <Panel header='BRAND'>
-              <RefinementList
-                attribute={'brand'}
-                searchable={true}
-                limit={8}
-                showMore={true}
-              />
-            </Panel>
-
-            <Panel header='PRODUCT VALUES'>
-              <RefinementList attribute={'brandValues'} operator={'and'} />
-            </Panel>
-
-            <Panel header='HEADQUARTERED'>
-              <RefinementList
-                attribute={'location.state'}
-                searchable={true}
-                limit={6}
-                showMore={true}
-              />
-            </Panel>
-
-            <Panel header='BRAND CLAIMS'>
-              <RefinementList
-                attribute={'product/labelClaims'}
-                operator={'and'}
-                searchable={true}
-                limit={6}
-                showMore={true}
-              />
-            </Panel>
-          </div>
+          <Filters />
           <div className='searchpage-main-right'>
             <div className='searchpage-search-section'>
               <SearchBox placeholder='What are you looking for?' />
@@ -106,10 +59,15 @@ const SearchPage = ({ params }) => {
                 hitComponent={({ hit }) => {
                   // console.log(hit.location)
                   // console.log(hit.objectID)
+                  // console.log(hit.imageURL)
 
                   return (
                     <Link
-                      href={{ pathname: `/product/${replaceAndRemoveChar(hit.productTitle)}` }}
+                      href={{
+                        pathname: `/product/${replaceAndRemoveChar(
+                          hit.productTitle
+                        )}`,
+                      }}
                       className='open-product-page'
                       onClick={() => handleProductClick(hit)}
                     >
@@ -117,16 +75,26 @@ const SearchPage = ({ params }) => {
                         <div className='article-img'>
                           <img src={hit.imageURL} alt='product-img' />
                         </div>
-                        <h3>{hit.productTitle}</h3>
-                        <p>{hit.brand}</p>
+                        <h3 className='w-full text-base font-extrabold leading-tight'>
+                          {hit.productTitle}
+                        </h3>
+                        <p className='w-full mt-1.5'>{hit.brand}</p>
                       </article>
                     </Link>
                   );
                 }}
               />
             </div>
-            <div id='pagination'>
-              <Pagination />
+            <div id='pagination' className='mt-8 text-center'>
+              <Pagination
+                padding={1}
+                showPrevious={false}
+                showNext={false}
+                classNames={{
+                  list: 'gap-2',
+                  link: 'text-md font-black rounded-lg p-4',
+                }}
+              />
             </div>
           </div>
         </div>
