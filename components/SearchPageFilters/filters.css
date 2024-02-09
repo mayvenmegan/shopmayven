@@ -1,3 +1,21 @@
+.ais-Panel-header{
+  margin-bottom:0.6rem;
+  font-size: 0.76rem;
+}
+.ais-ClearRefinements-button:disabled[disabled]{
+  background-image: linear-gradient(-180deg, #ffffff, #f5faf7);
+  border-color: #eaf0ec;
+  box-shadow: none;
+  color: #b8d8c2;
+
+  /* background-image: linear-gradient(-180deg, #fff, #f5f5fa);
+  border-color: #efeff5;
+  box-shadow: none;
+  color: #b6b7d5; */
+}
+
+
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -22,9 +40,26 @@
   font-weight: 500;
   border-radius: 8px;
 }
+/* pagination hover  */
+.ais-RefinementList-showMore:hover, .ais-ClearRefinements-button:hover, .ais-Pagination-item:not(.ais-Pagination-item--selected):not(.ais-Pagination-item--disabled) .ais-Pagination-link:hover{
+  background-image: linear-gradient(-180deg, #eefff4, #e5ffed);
+  border-color: #e5ffed;
+}
+.ais-RefinementList-showMore{
+  padding: 14px 15px;
+  border-radius: 5px;
+}
 
+.ais-ClearRefinements-button{
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 7px;
+}
 
-
+.ais-RefinementList-count{
+  background: none 0% 0% repeat scroll #f4fff8;
+  border-color: #bfd7c7;
+}
 
 .filters-drawer-top .ais-Stats {
   font-size: 1.1rem;
@@ -44,7 +79,6 @@
 .open-filters-btn .ais-ClearRefinements-button,
 .container-filters-footer .button {
   width: 100%;
-
 }
 .open-filters-button, .close-filters-btn{
   background-image: linear-gradient(rgba(255,255,255,.34),rgba(255,255,255,0));

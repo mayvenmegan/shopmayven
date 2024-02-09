@@ -33,7 +33,7 @@ const SearchPage = ({ params }) => {
       searchClient={searchClient}
       indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
       initialUiState={{
-        dev_SHOPMAYVEN: {
+        prod_SHOPMAYVEN: {
           query: replaceAndRemoveDash(params.id),
           page: 1,
         },
@@ -73,7 +73,7 @@ const SearchPage = ({ params }) => {
                     >
                       <article>
                         <div className='article-img'>
-                          <img src={hit.imageURL} alt='product-img' />
+                          <img src={hit.productImageURL} alt='product-img' />
                         </div>
                         <h3 className='w-full text-base font-extrabold leading-tight'>
                           {hit.productTitle}

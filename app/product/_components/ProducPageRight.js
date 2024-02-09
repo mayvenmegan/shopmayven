@@ -62,8 +62,7 @@ const ProducPageRight = ({product, deleteItemFromLocalStorage}) => {
           {product.brandValues.map((brandValue, indexName) => {
             return (
               <div
-                className='py-2.5 px-5 rounded-lg border border-[#20b04b] text-[#20b04b] bg-[#e8ffef] font-medium flex items-center justify-center  cursor-pointer hover:shadow-md	'
-                style={{}}
+                className='py-2.5 px-5 rounded-lg border border-[#20b04b] text-[#20b04b] bg-[#e8ffef] font-medium flex items-center justify-center cursor-pointer hover:shadow-md	'
                 key={brandValue}
                 onClick={() =>
                   router.push(
@@ -80,16 +79,16 @@ const ProducPageRight = ({product, deleteItemFromLocalStorage}) => {
     )}
 
     {/* Product claims */}
-    {product['product/labelClaims'].length > 0 && (
+    {product.productLabelClaims.length > 0 && (
       <div className='product-claims'>
         <p className='m-0 pb-2.5 text-lg font-bold'>
           Product Label Claims
         </p>
         <div className='grid grid-cols-2 gap-2.5'>
-          {product['product/labelClaims'].map((productClaim) => {
+          {product.productLabelClaims.map((productClaim) => {
             return (
               <div
-                className='py-2.5 px-5 rounded-lg border border-[#ff5a16] text-[#ff5a16] bg-[#fff0ea] font-medium flex items-center justify-center  cursor-pointer hover:shadow-md'
+                className='py-2.5 px-5 rounded-lg border border-[#ff5a16] text-[#ff5a16] bg-[#fff0ea] font-medium flex items-center justify-center cursor-pointer hover:shadow-md'
                 key={productClaim}
                 onClick={() =>
                   router.push(
@@ -113,7 +112,7 @@ const ProducPageRight = ({product, deleteItemFromLocalStorage}) => {
           {product.productAttributes.map((productAttribute) => {
             return (
               <div
-                className='py-2.5 px-5 rounded-lg border border-[#6E72A0] text-[#6E72A0] bg-[#eaecff] font-medium flex items-center justify-center  cursor-pointer hover:shadow-md'
+                className='py-2.5 px-5 rounded-lg border border-[#6E72A0] text-[#6E72A0] bg-[#eaecff] font-medium flex items-center justify-center cursor-pointer hover:shadow-md'
                 key={productAttribute}
                 onClick={() =>
                   router.push(

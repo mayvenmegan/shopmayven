@@ -19,7 +19,7 @@ const RenderFilters = () => {
             'productType',
             'brandValues',
             'location.state',
-            'product/labelClaims',
+            'productLabelClaims',
             'brand',
           ]}
           translations={{ resetButtonText: 'Reset Filters' }}
@@ -53,7 +53,7 @@ const RenderFilters = () => {
 
       <Panel header='BRAND CLAIMS'>
         <RefinementList
-          attribute={'product/labelClaims'}
+          attribute={'productLabelClaims'}
           operator={'and'}
           searchable={true}
           limit={6}
@@ -141,19 +141,20 @@ const Filters = () => {
           <div className='filters-drawer-middle mb-16 overflow-y-auto no-scrollbar'>
             <RenderFilters />
           </div>
-          <div className='filters-drawer-bottom border-t border-gray-200 bg-white flex justify-between items-center text-2xl font-bold gap-2.5 fixed bottom-0 p-5 w-full -mx-5'>
+          <div className='filters-drawer-bottom border-t border-gray-200 bg-white flex justify-center items-center text-2xl font-bold gap-2.5 fixed bottom-0 p-5 w-full -mx-5'>
             <ClearRefinements
               includedAttributes={[
                 'productType',
                 'brandValues',
                 'location.state',
-                'product/labelClaims',
+                'belClaims',
                 'brand',
               ]}
               translations={{ resetButtonText: 'Reset Filters' }}
+              className='max-w-[220px]'
             />
             <button
-              className='close-filters-btn flex flex-row items-center justify-center py-2 px-4 rounded-lg text-lg font-medium bg-[#20b04b] text-[#ffffff] cursor-pointer'
+              className='close-filters-btn flex flex-row items-center justify-center py-2 px-4 rounded-lg text-lg font-medium bg-[#20b04b] text-[#ffffff] cursor-pointer max-w-[220px]'
               onClick={toggleDrawer}
             >
               Show Results

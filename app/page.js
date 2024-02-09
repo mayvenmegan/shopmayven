@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const handleChange = (e) => {
-    const query = e.uiState.dev_SHOPMAYVEN.query;
+    const query = e.uiState.prod_SHOPMAYVEN.query;
 
     setSearchQuery(replaceAndRemoveChar(query));
   };
