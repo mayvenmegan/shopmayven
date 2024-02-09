@@ -34,18 +34,19 @@ const ProductPageLeft = ({ product }) => {
         <div className='buyLinks-grid'>
           {
             product.buyLinks.map((buyLink, index) => {
-              return <Link
+              return buyLink.productURL && (
+                <Link
                 href={buyLink.productURL}
                 target='_blank'
                 className='product-link w-full h-9'
                 key={`buyLink-${index}`}
               >
-                  <img
-                    className='w-full h-full object-contain'
-                    src={buyLink.retailerLogoURL}
-                    alt='brand-logo'
-                  />
-              </Link>
+                <img
+                  className='w-full h-full object-contain'
+                  src={buyLink.retailerLogoURL}
+                  alt='brand-logo'
+                />
+              </Link>)
             })
           }
 
