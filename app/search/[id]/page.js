@@ -39,7 +39,7 @@ const SearchPage = ({ params }) => {
         },
       }}
     >
-      <Configure hitsPerPage={12} />
+      <Configure hitsPerPage={20} />
       <div className='searchpage'>
         <Header py='py-6' />
 
