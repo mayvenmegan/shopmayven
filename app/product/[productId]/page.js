@@ -9,20 +9,18 @@ import ProductPageLeft from '../_components/ProductPageLeft';
 import ProducPageRight from '../_components/ProducPageRight';
 
 
-const ProductPage = () => {
-  const product = JSON.parse(localStorage.getItem('mayvenProduct'));
+const ProductPage = ({params}) => {
+  // console.log(params.productId)
+  const product = JSON.parse(sessionStorage.getItem(params.productId));
 
-  const deleteItemFromLocalStorage = () => {
-    localStorage.removeItem('mayvenProduct');
-  };
+
 
   return (
     <div className='py-[30px] px-[50px] max-[600px]:px-10 max-[480px]:px-5'>
       <div className='inline-block'>
         <Link
-          href={`/search/${product.searchPageQuery}`}
+          href={`/products`}
           className='flex items-center justify-start no-underline text-[#222] text-lg gap-[3px] hover:underline'
-          onClick={deleteItemFromLocalStorage}
         >
           <FaLessThan size={18}/> Back to Search Results
         </Link>
@@ -34,7 +32,7 @@ const ProductPage = () => {
         <ProductPageLeft product={product}/>
 
         {/* Product page right */}
-        <ProducPageRight product={product} deleteItemFromLocalStorage={deleteItemFromLocalStorage}/>
+        <ProducPageRight product={product} />
       </div>
     </div>
   );

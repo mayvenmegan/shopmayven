@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 function capitalizeFirstLetter(str) {
     return str[0].toUpperCase() + str.slice(1);
   }
-const ProducPageRight = ({product, deleteItemFromLocalStorage}) => {
+const ProducPageRight = ({product}) => {
     const router = useRouter();
   return (
     <div className='max-w-[60%] flex flex-col gap-10 max-[750px]:max-w-full'>
@@ -32,7 +32,6 @@ const ProducPageRight = ({product, deleteItemFromLocalStorage}) => {
                 product.location?.city
               )}`}
               className=' no-underline text-[#222] text-lg hover:underline'
-              onClick={deleteItemFromLocalStorage}
             >
               {product.location?.city}
             </Link>
@@ -44,7 +43,6 @@ const ProducPageRight = ({product, deleteItemFromLocalStorage}) => {
                 product.location?.state
               )}`}
               className='no-underline text-[#222] text-lg hover:underline'
-              onClick={deleteItemFromLocalStorage}
             >
               {product.location?.state}
             </Link>

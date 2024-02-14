@@ -1,10 +1,9 @@
 'use client';
 import Link from 'next/link';
-import Header from '../../../components/header';
-import Footer from '../../../components/footer';
-import searchClient from '../../../components/algolia';
-import replaceAndRemoveChar from '../../../utils/replaceAndRemoveChar';
-import replaceAndRemoveDash from '../../../utils/replaceAndRemoveDash';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
+import searchClient from '../../components/algolia';
+import replaceAndRemoveChar from '../../utils/replaceAndRemoveChar';
 import {
   InstantSearch,
   SearchBox,
@@ -13,13 +12,12 @@ import {
   Stats,
   Configure,
 } from 'react-instantsearch';
-import '../../../styles/searchpage.css';
+import '../../styles/searchpage.css';
 import Filters from '@/components/SearchPageFilters/Filters';
-const SearchPage = ({ params }) => {
-  // console.log(params.id)
+
+const SearchPage = () => {
 
   const handleProductClick = (hit) => {
-    // console.log(JSON.stringify(hit))
     sessionStorage.setItem(
       replaceAndRemoveChar(hit.productTitle),
       JSON.stringify({ ...hit })
@@ -32,7 +30,6 @@ const SearchPage = ({ params }) => {
       indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
       initialUiState={{
         prod_SHOPMAYVEN: {
-          query: replaceAndRemoveDash(params.id),
           page: 1,
         },
       }}
@@ -55,9 +52,6 @@ const SearchPage = ({ params }) => {
             <div id='hits'>
               <Hits
                 hitComponent={({ hit }) => {
-                  // console.log(hit.location)
-                  // console.log(hit.objectID)
-                  // console.log(hit.imageURL)
 
                   return (
                     <Link

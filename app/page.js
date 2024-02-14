@@ -30,12 +30,12 @@ export default function Home() {
       <div className='search-section'>
         <SearchBox
           placeholder='What are you looking for?'
-          onSubmit={() => router.push(`search/${searchQuery}`)}
+          onSubmit={() => router.push(searchQuery==="" ? `/products` :`search/${searchQuery}`)}
         />
 
         <button
           className='search-btn'
-          onClick={() => router.push(`search/${searchQuery}`)}
+          onClick={() => router.push(searchQuery==="" ? `/products` :`search/${searchQuery}`)}
         >
           Find it!
         </button>

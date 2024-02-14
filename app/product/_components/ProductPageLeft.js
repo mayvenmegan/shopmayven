@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import Ingredients from '../_components/ingredients';
 const ProductPageLeft = ({ product }) => {
