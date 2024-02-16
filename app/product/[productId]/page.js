@@ -23,13 +23,11 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null)
 
   useEffect(() => {
+    index.getObject(productId).then(object => {
+      setProduct(object);
+      // console.log(object);
+    });
 
-    return () => {
-      index.getObject(productId).then(object => {
-        setProduct(object);
-        // console.log(object);
-      });
-    }
   }, [])
 
 
