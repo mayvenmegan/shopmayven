@@ -18,13 +18,6 @@ import Filters from '@/components/SearchPageFilters/Filters';
 const SearchPage = ({ params }) => {
   // console.log(params.id)
 
-  const handleProductClick = (hit) => {
-    // console.log(JSON.stringify(hit))
-    sessionStorage.setItem(
-      replaceAndRemoveChar(hit.productTitle),
-      JSON.stringify({ ...hit })
-    );
-  };
 
   return (
     <InstantSearch
@@ -55,19 +48,11 @@ const SearchPage = ({ params }) => {
             <div id='hits'>
               <Hits
                 hitComponent={({ hit }) => {
-                  // console.log(hit.location)
-                  // console.log(hit.objectID)
-                  // console.log(hit.imageURL)
-
+                  const slug = replaceAndRemoveChar(hit.productTitle)
                   return (
                     <Link
-                      href={{
-                        pathname: `/product/${replaceAndRemoveChar(
-                          hit.productTitle
-                        )}`,
-                      }}
+                    href={`/product/${slug}?id=${hit.objectID}`}
                       className='open-product-page'
-                      onClick={() => handleProductClick(hit)}
                     >
                       <article>
                         <div className='article-img'>

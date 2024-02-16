@@ -1,18 +1,36 @@
 'use client';
 import Link from 'next/link';
 // import Image from 'next/image';
-
+import React, {useState, useEffect} from 'react';
 import { FaLessThan } from "react-icons/fa6";
-import '../../../styles/product-page.css';
+import { useSearchParams } from 'next/navigation'
+
+const algoliasearch = require("algoliasearch");
+const searchClient = algoliasearch(
+  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY
+  );
+const index = searchClient.initIndex(process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME);
 
 import ProductPageLeft from '../_components/ProductPageLeft';
 import ProducPageRight from '../_components/ProducPageRight';
+import '../../../styles/product-page.css';
 
+const ProductPage = () => {
+  const searchParams = useSearchParams();
+  const productId = searchParams.get("id");
 
-const ProductPage = ({params}) => {
-  // console.log(params.productId)
-  const product = JSON.parse(sessionStorage.getItem(params.productId));
+  const [product, setProduct] = useState(null)
 
+  useEffect(() => {
+
+    return () => {
+      index.getObject(productId).then(object => {
+        setProduct(object);
+        // console.log(object);
+      });
+    }
+  }, [])
 
 
   return (
@@ -27,6 +45,8 @@ const ProductPage = ({params}) => {
       </div>
 
       {/* Product page main */}
+      {
+        product !==null && (
       <div className='flex items-start gap-10 py-5 max-[750px]:flex-col max-[750px]:gap-12'>
         {/* Product page left */}
         <ProductPageLeft product={product}/>
@@ -34,6 +54,9 @@ const ProductPage = ({params}) => {
         {/* Product page right */}
         <ProducPageRight product={product} />
       </div>
+
+      )
+      }
     </div>
   );
 };
