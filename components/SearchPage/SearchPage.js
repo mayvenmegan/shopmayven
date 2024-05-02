@@ -1,9 +1,8 @@
 'use client';
 import Link from 'next/link';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
-import searchClient from '../../components/algolia';
-import replaceAndRemoveChar from '../../utils/replaceAndRemoveChar';
+import searchClient from '@/components/algolia';
+import replaceAndRemoveChar from '@/utils/replaceAndRemoveChar';
+import replaceAndRemoveDash from '@/utils/replaceAndRemoveDash';
 import {
   InstantSearch,
   SearchBox,
@@ -12,10 +11,14 @@ import {
   Stats,
   Configure,
 } from 'react-instantsearch';
+
 import '../../styles/searchpage.css';
 import Filters from '@/components/SearchPage/SearchPageFilters/Filters';
 
-const SearchPage = () => {
+
+const SearchPage = ({ params }) => {
+  // console.log(params.id)
+
 
   return (
     <InstantSearch
@@ -23,14 +26,12 @@ const SearchPage = () => {
       indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
       initialUiState={{
         prod_SHOPMAYVEN: {
+          query: replaceAndRemoveDash(params.id),
           page: 1,
         },
       }}
     >
       <Configure hitsPerPage={20} />
-      <div className='searchpage'>
-        <Header py='py-6' />
-
         <div className='searchpage-main'>
           {/* Filter */}
 
@@ -48,7 +49,7 @@ const SearchPage = () => {
                   const slug = replaceAndRemoveChar(hit.productTitle)
                   return (
                     <Link
-                      href={`/product/${slug}?id=${hit.objectID}`}
+                    href={`/product/${slug}?id=${hit.objectID}`}
                       className='open-product-page'
                     >
                       <article>
@@ -78,9 +79,6 @@ const SearchPage = () => {
             </div>
           </div>
         </div>
-
-        <Footer />
-      </div>
     </InstantSearch>
   );
 };

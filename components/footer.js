@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import {AiFillFacebook, AiFillLinkedin, AiFillInstagram} from "react-icons/ai"
-const footer = () => {
+const footer = ({marginTop}) => {
   return (
-    <footer >
+    <footer className={`${marginTop}`} >
         <div className='site-title'>MAYVEN</div>
-        <div>A place where you can find products and brands that match your value</div>
+        <div className=' text-center leading-tight'>A place where you can find products and brands that match your value</div>
         <div>hello@shopmayven.com</div>
         <div className='socials'>
             <Link

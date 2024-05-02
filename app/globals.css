@@ -63,6 +63,7 @@ html::-webkit-scrollbar {
   padding: 45px 40px 40px 40px ;
   align-items: center;
   gap: 20px;
+
 }
 .search-section .search-btn{
   background: #20b04b;
@@ -83,7 +84,12 @@ html::-webkit-scrollbar {
   border-radius: 6px;
 
 }
-
+.ais-RefinementList-showMore:focus{
+  background-image: linear-gradient(-180deg, #fff, #f2fcf5);
+  border-color: rgb(255,90,22);
+  box-shadow: none;
+  outline: none;
+}
 
 .ais-Menu-searchBox .ais-SearchBox-form::before, .ais-RefinementList-searchBox .ais-SearchBox-form::before {
   left: 0.8rem;
