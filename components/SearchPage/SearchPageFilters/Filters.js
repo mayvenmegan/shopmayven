@@ -83,7 +83,7 @@ const Filters = () => {
   }, []);
 
   return screenSize > 700 ? (
-    <div className='searchpage-main-left'>
+    <div className='searchpage-main-left max-w-[280px]'>
       <RenderFilters />
     </div>
   ) : (

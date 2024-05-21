@@ -30,12 +30,12 @@ const HomePage = () => {
     <div className='search-section'>
       <SearchBox
         placeholder='What are you looking for?'
-        onSubmit={() => router.push(searchQuery==="" ? `/products` :`search/${searchQuery}`)}
+        onSubmit={() => router.push(searchQuery==="" ? `` :`search/${searchQuery}`)}
       />
 
       <button
         className='search-btn'
-        onClick={() => router.push(searchQuery==="" ? `/products` :`search/${searchQuery}`)}
+        onClick={() => router.push(searchQuery==="" ? `/search` :`search/${searchQuery}`)}
       >
         Find it!
       </button>

@@ -1,5 +1,8 @@
 'use client';
 import Link from 'next/link';
+import { useRouter } from "next/navigation";
+import { useState } from 'react';
+
 import searchClient from '@/components/algolia';
 import replaceAndRemoveChar from '@/utils/replaceAndRemoveChar';
 import replaceAndRemoveDash from '@/utils/replaceAndRemoveDash';
@@ -17,7 +20,20 @@ import Filters from '@/components/SearchPage/SearchPageFilters/Filters';
 
 
 const SearchPage = ({ params }) => {
+
   // console.log(params.id)
+  
+//   const changeURL = (newURL) => {
+//     // Change the URL without refreshing the page
+//     window.history.pushState(null, '', `/search/${newURL}`);
+//     console.log(newURL);
+// };
+
+//   const queryHook = (query, search) => {
+//     query !== "" && changeURL(query);
+//     search(query);
+    
+//   };
 
 
   return (
@@ -38,7 +54,8 @@ const SearchPage = ({ params }) => {
           <Filters />
           <div className='searchpage-main-right'>
             <div className='searchpage-search-section'>
-              <SearchBox placeholder='What are you looking for?' />
+              <SearchBox placeholder='What are you looking for?'  />
+              {/* <SearchBox placeholder='What are you looking for?' queryHook={queryHook} /> */}
             </div>
             <div id='stats'>
               <Stats />

@@ -14,7 +14,7 @@ export default function replaceAndRemoveChar(str) {
         
       } else {
         // Check if the character is a symbol using a regular expression
-        let regex = /[()&*?@#!%+]/;
+        let regex = /[()&*?@#!%+,:]/;
         if (regex.test(char)) {
           // Remove it by skipping it
           continue;
