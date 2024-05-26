@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { useState } from "react";
 import ImageMagnifier from "./ImageMagnifier";
 import Ingredients from "../_components/ingredients";
 
 const ProductPageLeft = ({ product }) => {
+
   return (
     <div className="flex flex-col gap-2.5 w-[40%] max-[750px]:w-full">
       {/* Product's brand logo */}
@@ -18,23 +20,19 @@ const ProductPageLeft = ({ product }) => {
         {product.productTitle.toUpperCase()}
       </h2>
       {/* Product image */}
-      <div className="max-w-[80%] h-[65vh] rounded-2xl max-[970px]:w-[100%] max-[750px]:w-[60%] flex items-start justify-start">
+      <div className="w-[85%] max-h-[65vh] rounded-2xl flex items-center justify-center"
+      >
         <ImageMagnifier
           src={product.productImageURL}
-          // width={300}
-          // height={200}
-          magnifierHeight={210}
-          magnifierWidth={300}
+          // width={imageSize.width}
+          // height={imageSize.height}
+          magnifierHeight={280}
+          magnifierWidth={380}
           zoomLevel={3}
           alt="Product Image"
-          className="w-full h-full object-contain"
+          className="max-w-[520px] max-h-[65vh] object-contain"
         />
-{/* 
-        <img
-          className="w-full h-full object-contain rounded-xl"
-          src={product.productImageURL}
-          alt="product-img"
-        /> */}
+
 
       </div>
 

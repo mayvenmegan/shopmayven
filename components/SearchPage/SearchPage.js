@@ -70,8 +70,8 @@ const SearchPage = ({ params }) => {
                       className='open-product-page'
                     >
                       <article>
-                        <div className='article-img'>
-                          <img src={hit.productImageURL} alt='product-img' />
+                        <div className='max-w-[180px] h-[180px]'>
+                          <img className='w-full h-full !object-contain' src={hit.productImageURL} alt='product-img' />
                         </div>
                         <h3 className='w-full text-base font-extrabold leading-tight'>
                           {hit.productTitle}

@@ -38,7 +38,8 @@ const ImageMagnifier = ({
         setXY([x, y]);
     };
 
-    return <div className="relative inline-block w-full h-full cursor-grab ">
+    return <div className="relative w-full h-full cursor-grab flex items-center justify-center ">
+    
         <img
             src={src}
             className={className}
@@ -63,7 +64,7 @@ const ImageMagnifier = ({
                 backgroundImage: `url('${src}')`,
                 backgroundRepeat: 'no-repeat',
                 top: `${y - magnifierHeight / 2}px`,
-                left: `${x - magnifierWidth / 2}px`,
+                left: `${x - magnifierWidth / 3}px`,
                 backgroundSize: `${imgWidth * zoomLevel}px ${imgHeight * zoomLevel}px`,
                 backgroundPositionX: `${-x * zoomLevel + magnifierWidth / 2}px`,
                 backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`,
