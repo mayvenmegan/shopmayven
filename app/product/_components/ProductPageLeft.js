@@ -20,7 +20,7 @@ const ProductPageLeft = ({ product }) => {
         {product.productTitle.toUpperCase()}
       </h2>
       {/* Product image */}
-      <div className="w-[85%] max-h-[65vh] rounded-2xl flex items-center justify-center"
+      <div className="w-[90%] max-[460px]:w-[98%] max-h-[65vh] rounded-2xl flex items-center justify-center"
       >
         <ImageMagnifier
           src={product.productImageURL}
@@ -30,7 +30,7 @@ const ProductPageLeft = ({ product }) => {
           magnifierWidth={380}
           zoomLevel={3}
           alt="Product Image"
-          className="max-w-[520px] max-h-[65vh] object-contain"
+          className="max-w-full max-h-full object-contain"
         />
 
 
