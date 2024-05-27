@@ -20,8 +20,7 @@ const ProductPageLeft = ({ product }) => {
         {product.productTitle.toUpperCase()}
       </h2>
       {/* Product image */}
-      <div className="w-[90%] max-[460px]:w-[98%] max-h-[65vh] rounded-2xl flex items-center justify-center"
-      >
+
         <ImageMagnifier
           src={product.productImageURL}
           // width={imageSize.width}
@@ -34,7 +33,7 @@ const ProductPageLeft = ({ product }) => {
         />
 
 
-      </div>
+
 
       <Ingredients productIngredients={product.ingredients} />
       {/* Product buy pages links */}

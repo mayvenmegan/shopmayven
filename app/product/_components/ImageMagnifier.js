@@ -38,8 +38,9 @@ const ImageMagnifier = ({
         setXY([x, y]);
     };
 
-    return <div className="relative w-full h-full cursor-grab flex items-center justify-center ">
-    
+    return <div className="relative w-full h-fit cursor-grab flex justify-center ">
+          <div className="w-[90%] max-[460px]:w-[98%] max-h-[60vh] rounded-2xl flex justify-start"
+      >
         <img
             src={src}
             className={className}
@@ -50,6 +51,7 @@ const ImageMagnifier = ({
             onMouseLeave={(e) => mouseLeave(e)}
             onMouseMove={(e) => mouseMove(e)}
         />
+        </div>
         <div
             style={{
                 display: showMagnifier ? '' : 'none',
@@ -64,7 +66,7 @@ const ImageMagnifier = ({
                 backgroundImage: `url('${src}')`,
                 backgroundRepeat: 'no-repeat',
                 top: `${y - magnifierHeight / 2}px`,
-                left: `${x - magnifierWidth / 3}px`,
+                left: `${x - magnifierWidth / 4}px`,
                 backgroundSize: `${imgWidth * zoomLevel}px ${imgHeight * zoomLevel}px`,
                 backgroundPositionX: `${-x * zoomLevel + magnifierWidth / 2}px`,
                 backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`,
