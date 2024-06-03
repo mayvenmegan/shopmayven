@@ -1,18 +1,22 @@
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+
 import ImageMagnifier from "./ImageMagnifier";
-import Ingredients from "../_components/ingredients";
+import Ingredients from "../_components/Ingredients";
 
 const ProductPageLeft = ({ product }) => {
-
   return (
     <div className="flex flex-col gap-2.5 w-[40%] max-[750px]:w-full">
       {/* Product's brand logo */}
-      <div className="w-[40%] h-[12vh]">
-        <img
-          className="w-full h-full object-contain"
+      <div className="relative w-56 h-16">
+        <Image
           src={product.brandLogoURL}
-          alt="brand-logo"
+          alt={`${product.brand} logo`}
+          fill
+          style={{
+            objectFit: "contain",
+          }}
+          sizes="33vw"
         />
       </div>
       {/* Product title */}
@@ -20,20 +24,14 @@ const ProductPageLeft = ({ product }) => {
         {product.productTitle.toUpperCase()}
       </h2>
       {/* Product image */}
-
-        <ImageMagnifier
-          src={product.productImageURL}
-          // width={imageSize.width}
-          // height={imageSize.height}
-          magnifierHeight={280}
-          magnifierWidth={380}
-          zoomLevel={3}
-          alt="Product Image"
-          className="max-w-full max-h-full object-contain"
-        />
-
-
-
+      <ImageMagnifier
+        src={product.productImageURL}
+        magnifierHeight={280}
+        magnifierWidth={380}
+        zoomLevel={3}
+        alt={product.productTitle}
+        className="max-w-full max-h-full object-contain"
+      />
 
       <Ingredients productIngredients={product.ingredients} />
       {/* Product buy pages links */}
@@ -48,13 +46,19 @@ const ProductPageLeft = ({ product }) => {
                 <Link
                   href={buyLink.productURL}
                   target="_blank"
-                  className="product-link w-full h-9"
+                  className="product-link relative w-full h-9"
                   key={`buyLink-${index}`}
                 >
-                  <img
-                    className="w-full h-full object-contain"
+
+                  <Image
+                    // className="w-full h-full object-contain"
                     src={buyLink.retailerLogoURL}
-                    alt="brand-logo"
+                    alt={`${buyLink.retailerName} logo`}
+                    fill
+                    style={{
+                      objectFit:"contain"
+                    }}
+                    sizes="33vw"
                   />
                 </Link>
               )

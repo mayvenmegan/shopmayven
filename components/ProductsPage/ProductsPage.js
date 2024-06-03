@@ -15,25 +15,11 @@ import {
   Configure,
 } from 'react-instantsearch';
 
-import '../../styles/searchpage.css';
-import Filters from '@/components/SearchPage/SearchPageFilters/Filters';
+import '../../styles/products-page.css';
+import Filters from '@/components/ProductsPage/ProductsPageFilters/Filters';
 
 
-const SearchPage = ({ params }) => {
-
-  // console.log(params.id)
-  
-//   const changeURL = (newURL) => {
-//     // Change the URL without refreshing the page
-//     window.history.pushState(null, '', `/search/${newURL}`);
-//     console.log(newURL);
-// };
-
-//   const queryHook = (query, search) => {
-//     query !== "" && changeURL(query);
-//     search(query);
-    
-//   };
+const ProductsPage = ({ params }) => {
 
 
   return (
@@ -55,7 +41,7 @@ const SearchPage = ({ params }) => {
           <div className='searchpage-main-right'>
             <div className='searchpage-search-section'>
               <SearchBox placeholder='What are you looking for?'  />
-              {/* <SearchBox placeholder='What are you looking for?' queryHook={queryHook} /> */}
+
             </div>
             <div id='stats'>
               <Stats />
@@ -100,4 +86,4 @@ const SearchPage = ({ params }) => {
   );
 };
 
-export default SearchPage;
+export default ProductsPage;

@@ -7,8 +7,8 @@ const ImageMagnifier = ({
     width,
     height,
     alt,
-    magnifierHeight = 150,
-    magnifierWidth = 150,
+    magnifierHeight = 250,
+    magnifierWidth = 250,
     zoomLevel = 3
 }) => {
     const [showMagnifier, setShowMagnifier] = useState(false);
@@ -38,8 +38,8 @@ const ImageMagnifier = ({
         setXY([x, y]);
     };
 
-    return <div className="relative w-full h-fit cursor-grab flex justify-center ">
-          <div className="w-[90%] max-[460px]:w-[98%] max-h-[60vh] rounded-2xl flex justify-start"
+    return <div className="relative w-full h-fit cursor-grab flex">
+          <div className="w-full max-w-[500px] max-h-[60vh] flex justify-start"
       >
         <img
             src={src}

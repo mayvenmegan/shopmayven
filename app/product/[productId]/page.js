@@ -31,7 +31,7 @@ export default function ProductPage () {
     if (window.history.length > 1) {
       router.back();
     } else {
-      router.push('/search'); // or your desired fallback page
+      router.push('/products'); // or your desired fallback page
     }
   };
 
@@ -59,7 +59,7 @@ export default function ProductPage () {
       {/* Product page main */}
       {
         product !==null && (
-      <div className='flex items-start gap-10 py-5 max-[750px]:flex-col max-[750px]:gap-12'>
+      <div className='flex items-start gap-10 py-5 max-[750px]:flex-col max-[750px]:gap-14'>
         {/* Product page left */}
         <ProductPageLeft product={product}/>
 

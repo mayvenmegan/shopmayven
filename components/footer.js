@@ -16,6 +16,7 @@ const footer = ({marginTop}) => {
             <AiFillFacebook 
             size={25}
             className='icon'
+            name='shopmayven facebook profile'
            /> 
             </Link>
 
@@ -27,6 +28,7 @@ const footer = ({marginTop}) => {
             <AiFillLinkedin 
             size={25}
             className='icon'
+            name='shopmayven linkedin profile'
            /> 
             </Link>
 
@@ -34,11 +36,11 @@ const footer = ({marginTop}) => {
             href={'https://www.instagram.com/shopmayven/'}
             className='social-link'
             target='_blank'
-            
             >
             <AiFillInstagram 
             size={25}
             className='icon'
+            name='shopmayven instagram profile'
            /> 
             </Link>
 

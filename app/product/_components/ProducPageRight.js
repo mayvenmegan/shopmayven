@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaLocationDot } from 'react-icons/fa6';
 import replaceAndRemoveChar from '../../../utils/replaceAndRemoveChar';
 // import Image from 'next/image';
@@ -14,21 +15,25 @@ const ProducPageRight = ({product}) => {
     <div className='max-w-[60%] flex flex-col gap-10 max-[750px]:max-w-full'>
     {/* Location details */}
     <div className='flex text-lg gap-2.5'>
-      <div className='w-[160px] h-[160px]'>
-        <img
-          className='w-full h-full object-contain'
+      <div className='relative w-[160px] h-[160px]'>
+        <Image
           src={product.location.stateMapURL}
-          alt='map-img'
+          alt={`image of ${product.location.state}`}
+          fill
+          style={{
+            objectFit: 'contain',
+          }}
+          sizes="33vw"
         />
       </div>
       <div className='flex text-lg items-center justify-center'>
         {/* Location Icon*/}
-        <FaLocationDot size={25} className='-mt-8 -ml-0.5' />
+        <FaLocationDot size={25} className='-mt-8 -ml-0.5' name={`${product.location?.city}`} />
         {/* Location Info */}
         <div className='flex flex-col font-medium'>
           <div>
             <Link
-              href={`/search/${replaceAndRemoveChar(
+              href={`/products/${replaceAndRemoveChar(
                 product.location?.city
               )}`}
               className=' no-underline text-[#222] text-lg hover:underline'
@@ -39,7 +44,7 @@ const ProducPageRight = ({product}) => {
 
           <div>
             <Link
-              href={`/search/${replaceAndRemoveChar(
+              href={`/products/${replaceAndRemoveChar(
                 product.location?.state
               )}`}
               className='no-underline text-[#222] text-lg hover:underline'
@@ -64,7 +69,7 @@ const ProducPageRight = ({product}) => {
                 key={brandValue}
                 onClick={() =>
                   router.push(
-                    `/search/${replaceAndRemoveChar(brandValue)}`
+                    `/products/${replaceAndRemoveChar(brandValue)}`
                   )
                 }
               >
@@ -90,7 +95,7 @@ const ProducPageRight = ({product}) => {
                 key={productClaim}
                 onClick={() =>
                   router.push(
-                    `/search/${replaceAndRemoveChar(productClaim)}`
+                    `/products/${replaceAndRemoveChar(productClaim)}`
                   )
                 }
               >
@@ -114,7 +119,7 @@ const ProducPageRight = ({product}) => {
                 key={productAttribute}
                 onClick={() =>
                   router.push(
-                    `/search/${replaceAndRemoveChar(productAttribute)}`
+                    `/products/${replaceAndRemoveChar(productAttribute)}`
                   )
                 }
               >

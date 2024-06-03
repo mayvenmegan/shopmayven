@@ -5,7 +5,7 @@ import Footer from '../../../components/footer';
 
 
 
-import SearchPage from '@/components/SearchPage/SearchPage';
+import ProductsPage from '@/components/ProductsPage/ProductsPage';
 
 const MainSearchPage = ({params}) => {
   // console.log(params);
@@ -15,7 +15,7 @@ const MainSearchPage = ({params}) => {
 
       <main className='searchpage'>
         <Header py='py-6' />
-          <SearchPage params={params} />
+          <ProductsPage params={params} />
         <Footer marginTop={'mt-auto'} />
       </main>
 

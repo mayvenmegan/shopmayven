@@ -35,7 +35,7 @@ const HomePage = () => {
 
       <button
         className='search-btn'
-        onClick={() => router.push(searchQuery==="" ? `/search` :`search/${searchQuery}`)}
+        onClick={() => router.push(searchQuery==="" ? `/products` :`search/${searchQuery}`)}
       >
         Find it!
       </button>
@@ -43,7 +43,7 @@ const HomePage = () => {
     <div className='search-sugges-box !mb-10'>
 
         <Link
-          href={`/search/female-founder-suncreen-spf-50`}
+          href={`/products/female-founder-suncreen-spf-50`}
           className='homepage-search-suggestion'
         >
           <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>
@@ -51,7 +51,7 @@ const HomePage = () => {
           </button>
         </Link>
         <Link
-          href={`/search/vegan-shampoo-made-in-usa`}
+          href={`/products/vegan-shampoo-made-in-usa`}
           className='homepage-search-suggestion'
         >
           <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>
@@ -59,7 +59,7 @@ const HomePage = () => {
           </button>
         </Link>
       <Link
-        href={`/search/anti-cruelty-baby-lotion`}
+        href={`/products/anti-cruelty-baby-lotion`}
         className='homepage-search-suggestion'
       >
         <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>
@@ -67,7 +67,7 @@ const HomePage = () => {
         </button>
       </Link>
       <Link
-        href={`/search/face-cream-paraben-free`}
+        href={`/products/face-cream-paraben-free`}
         className='homepage-search-suggestion'
       >
         <button className='flex flex-col items-center justify-center gap-0 px-6 py-3.5 rounded-2xl text-xl max-[520px]:text-lg max-[520px]:rounded-xl max-[520px]:px-5 max-[520px]:py-3.5'>

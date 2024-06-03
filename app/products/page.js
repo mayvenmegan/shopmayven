@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import searchClient from '../../components/algolia';
@@ -12,10 +13,10 @@ import {
   Stats,
   Configure,
 } from 'react-instantsearch';
-import '../../styles/searchpage.css';
-import Filters from '@/components/SearchPage/SearchPageFilters/Filters';
+import '../../styles/products-page.css';
+import Filters from '@/components/ProductsPage/ProductsPageFilters/Filters';
 
-const SearchPage = () => {
+const ProductsPage = () => {
 
   return (
     <InstantSearch
@@ -52,9 +53,14 @@ const SearchPage = () => {
                       className='open-product-page'
                     >
                       <article>
-                        <div className='max-w-[180px] h-[180px]'>
-                          <img className='w-full h-full object-contain' src={hit.productImageURL} alt='product-img' />
+                        <div className='w-[180px] h-[180px]'>
+                          <img 
+                          className='w-full h-full object-contain' 
+                          src={hit.productImageURL} 
+                          alt= {`${hit.productTitle}`}
+                          />
                         </div>
+
                         <h3 className='w-full text-base font-extrabold leading-tight'>
                           {hit.productTitle}
                         </h3>
@@ -85,4 +91,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default ProductsPage;
