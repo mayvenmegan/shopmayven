@@ -53,11 +53,22 @@ const ProductsPage = () => {
                       className='open-product-page'
                     >
                       <article>
-                        <div className='w-[180px] h-[180px]'>
-                          <img 
+                        <div className='relative w-[180px] h-[180px]'>
+                          {/* <img 
                           className='w-full h-full object-contain' 
                           src={hit.productImageURL} 
                           alt= {`${hit.productTitle}`}
+                          /> */}
+                          <Image
+                          // className='object-contain' 
+                          src={hit.productImageURL} 
+                          alt= {`${hit.productTitle}`}
+                          fill
+                          style={{
+                            objectFit: "contain"
+                          }}
+                          sizes='33vw'
+                          priority
                           />
                         </div>
 

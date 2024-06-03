@@ -16,7 +16,7 @@ const ProductPageLeft = ({ product }) => {
           style={{
             objectFit: "contain",
           }}
-          sizes="33vw"
+          sizes="66vw"
         />
       </div>
       {/* Product title */}
@@ -58,7 +58,7 @@ const ProductPageLeft = ({ product }) => {
                     style={{
                       objectFit:"contain"
                     }}
-                    sizes="33vw"
+                    sizes="66vw"
                   />
                 </Link>
               )
