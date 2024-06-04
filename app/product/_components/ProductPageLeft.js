@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import ImageMagnifier from "./ImageMagnifier";
-import Ingredients from "../_components/Ingredients";
+import Ingredients from "./ingredients";
 
 const ProductPageLeft = ({ product }) => {
   return (

@@ -18,12 +18,12 @@ const Indredients = ({productIngredients}) => {
   return (
     <div className='flex gap-2.5 max-w-[98%]'>
     {/* toggle filter button */}
-                <button className='w-[25px] mt-1 h-[25px] flex items-center justify-center cursor-pointer border border-[#20b04b] text-[#20b04b] bg-[#e8ffef] rounded' onClick={toggleVisibility}>
+                <button className='w-[25px] mt-1 h-[25px] flex items-center justify-center cursor-pointer border border-green-700 text-green-700 bg-green-100 rounded' onClick={toggleVisibility}>
                 {
                     showIngredientsInDetail ?
-                    <AiOutlineMinus />
+                    <AiOutlineMinus size={14} />
                     :
-                    <AiOutlinePlus />
+                    <AiOutlinePlus size={14} />
                 }
                     
                 </button>

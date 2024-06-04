@@ -65,7 +65,7 @@ const ProducPageRight = ({product}) => {
           {product.brandValues.map((brandValue, indexName) => {
             return (
               <div
-                className='py-2.5 px-5 rounded-lg border border-[#20b04b] text-[#20b04b] bg-[#e8ffef] font-medium flex items-center justify-center cursor-pointer hover:shadow-md	'
+                className='py-2.5 px-5 rounded-lg border border-green-600 text-green-600 bg-green-100 font-medium flex items-center justify-center cursor-pointer hover:shadow-md	'
                 key={brandValue}
                 onClick={() =>
                   router.push(
