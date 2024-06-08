@@ -1,4 +1,3 @@
-// ImageMagnifier.js
 import { useState } from 'react';
 
 const ImageMagnifier = ({
@@ -39,7 +38,7 @@ const ImageMagnifier = ({
     };
 
     return <div className="relative w-full h-fit cursor-grab flex">
-          <div className="w-full max-w-[500px] max-h-[60vh] flex justify-start"
+          <div className="w-full max-w-[500px] h-[60vh] flex justify-start items-center"
       >
         <img
             src={src}
@@ -71,6 +70,7 @@ const ImageMagnifier = ({
                 backgroundPositionX: `${-x * zoomLevel + magnifierWidth / 2}px`,
                 backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`,
             }}
+            
         />
     </div>
 };

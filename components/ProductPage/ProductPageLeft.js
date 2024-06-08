@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import ImageMagnifier from "./ImageMagnifier";
-import Ingredients from "./ingredients";
+import Ingredients from "./Ingredients";
 
 const ProductPageLeft = ({ product }) => {
   return (
@@ -36,10 +36,15 @@ const ProductPageLeft = ({ product }) => {
       <Ingredients productIngredients={product.ingredients} />
       {/* Product buy pages links */}
       <div className="click-to-buy">
-        <h2 className="m-0 mt-5 mb-2 italic text-2xl font-semibold text-[#20b04b]">
+        <h2 className="m-0 mt-5 mb-2 text-xl font-semibold text-green-600">
           Buy from here:
         </h2>
-        <div className="buyLinks-grid">
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+          columnGap: "10px",
+          rowGap: "20px",
+        }}>
           {product.buyLinks.map((buyLink, index) => {
             return (
               buyLink.productURL && (
@@ -51,7 +56,6 @@ const ProductPageLeft = ({ product }) => {
                 >
 
                   <Image
-                    // className="w-full h-full object-contain"
                     src={buyLink.retailerLogoURL}
                     alt={`${buyLink.retailerName} logo`}
                     fill

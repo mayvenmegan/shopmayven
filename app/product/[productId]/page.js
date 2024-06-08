@@ -1,9 +1,5 @@
 'use client';
-import Link from 'next/link';
 import { useRouter } from "next/navigation";
-
-
-// import Image from 'next/image';
 import React, {useState, useEffect} from 'react';
 import { FaLessThan } from "react-icons/fa6";
 import { useSearchParams } from 'next/navigation'
@@ -15,10 +11,8 @@ const searchClient = algoliasearch(
   );
 const index = searchClient.initIndex(process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME);
 
-import ProductPageLeft from '../_components/ProductPageLeft';
-import ProducPageRight from '../_components/ProducPageRight';
-import '../../../styles/product-page.css';
-
+import ProductPageLeft from "@/components/ProductPage/ProductPageLeft";
+import ProductPageRight from "@/components/ProductPage/ProductPageRight";
 
 export default function ProductPage () {
   const [product, setProduct] = useState(null)
@@ -31,7 +25,7 @@ export default function ProductPage () {
     if (window.history.length > 1) {
       router.back();
     } else {
-      router.push('/products'); // or your desired fallback page
+      router.push('/products'); 
     }
   };
 
@@ -60,11 +54,8 @@ export default function ProductPage () {
       {
         product !==null && (
       <div className='flex items-start gap-10 py-5 max-[750px]:flex-col max-[750px]:gap-14'>
-        {/* Product page left */}
         <ProductPageLeft product={product}/>
-
-        {/* Product page right */}
-        <ProducPageRight product={product} />
+        <ProductPageRight product={product} />
       </div>
 
       )

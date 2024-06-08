@@ -2,13 +2,11 @@
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
-
 import { InstantSearch, SearchBox } from 'react-instantsearch';
 import searchClient from '../algolia';
-import '../../styles/homepage.css'
+import '../../styles/home-page.css'
 import replaceAndRemoveChar from '../../utils/replaceAndRemoveChar';
 import Link from 'next/link';
-
 
 
 const HomePage = () => {
@@ -34,7 +32,7 @@ const HomePage = () => {
       />
 
       <button
-        className='search-btn'
+        className='search-btn bg-green-600 text-green-100 outline-none border-none rounded-[22px] text-lg font-medium py-[10px] px-[22px] cursor-pointer hover:text-white'
         onClick={() => router.push(searchQuery==="" ? `/products` :`search/${searchQuery}`)}
       >
         Find it!

@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaLocationDot } from 'react-icons/fa6';
-import replaceAndRemoveChar from '../../../utils/replaceAndRemoveChar';
-// import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { FaLocationDot } from 'react-icons/fa6';
+
+import replaceAndRemoveChar from '@/utils/replaceAndRemoveChar';
 
 //for capitalizing letter
 function capitalizeFirstLetter(str) {
     return str[0].toUpperCase() + str.slice(1);
   }
-const ProducPageRight = ({product}) => {
+const ProductPageRight = ({product}) => {
     const router = useRouter();
   return (
     <div className='max-w-[60%] flex flex-col gap-10 max-[750px]:max-w-full'>
@@ -134,4 +134,4 @@ const ProducPageRight = ({product}) => {
   )
 }
 
-export default ProducPageRight
+export default ProductPageRight
