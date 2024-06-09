@@ -1,12 +1,22 @@
 import './globals.css'
+
 import { Cabin} from 'next/font/google'
  
 
 const cabin = Cabin({ subsets: ['latin'], display: 'swap' })
 
 export const metadata = {
-  title: 'Mayven',
-  description: 'Mayven: A Place that helps you shop brands with purpose',
+  title: {
+    default:'Shopmayven',
+    template: "%s | Shopmayven"
+  },
+  description: 'Shopmayven: A Place that helps you shop brands with purpose',
+  twitter:{
+    card:"summary_large_image",
+    title: "shopmayven opengraph",
+    
+  },
+  metadataBase: new URL ("https://www.shopmayven.co/"),
 }
 
 export default function RootLayout({ children }) {

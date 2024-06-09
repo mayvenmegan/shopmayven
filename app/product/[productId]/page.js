@@ -14,6 +14,7 @@ const index = searchClient.initIndex(process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME)
 import ProductPageLeft from "@/components/ProductPage/ProductPageLeft";
 import ProductPageRight from "@/components/ProductPage/ProductPageRight";
 
+
 export default function ProductPage () {
   const [product, setProduct] = useState(null)
   
@@ -34,6 +35,8 @@ export default function ProductPage () {
     index.getObject(productId).then(object => {
       setProduct(object);
       // console.log(object);
+
+      
     });
 
   }, [])

@@ -16,6 +16,7 @@ import {
 import '../../styles/products-page.css';
 import Filters from '@/components/ProductsPage/ProductsPageFilters/Filters';
 
+
 const ProductsPage = () => {
 
   return (
