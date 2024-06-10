@@ -14,11 +14,10 @@ import {
 } from 'react-instantsearch';
 
 import '../../styles/products-page.css';
-import Filters from '@/components/ProductsPage/ProductsPageFilters/Filters';
+import Filters from './Filters';
 
 
 const ProductsPage = ({ params }) => {
-
 
   return (
     <InstantSearch

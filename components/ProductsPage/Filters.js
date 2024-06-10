@@ -3,12 +3,11 @@ import { RefinementList, ClearRefinements, Stats } from 'react-instantsearch';
 import { Panel } from 'react-instantsearch-dom';
 import { FaFilter } from 'react-icons/fa6';
 import React, { useEffect, useState } from 'react';
-import './filters.css';
-// import component 👇
-import Drawer from 'react-modern-drawer';
 
-//import styles 👇
+import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
+
+import './filters.css';
 
 const RenderFilters = () => {
   return (

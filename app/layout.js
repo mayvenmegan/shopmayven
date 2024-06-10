@@ -1,8 +1,6 @@
 import './globals.css'
-
 import { Cabin} from 'next/font/google'
  
-
 const cabin = Cabin({ subsets: ['latin'], display: 'swap' })
 
 export const metadata = {
