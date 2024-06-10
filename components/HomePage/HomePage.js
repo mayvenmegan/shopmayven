@@ -28,12 +28,12 @@ const HomePage = () => {
     <div className='search-section'>
       <SearchBox
         placeholder='What are you looking for?'
-        onSubmit={() => router.push(searchQuery==="" ? `` :`search/${searchQuery}`)}
+        onSubmit={() => router.push(searchQuery==="" ? `` :`products/${searchQuery}`)}
       />
 
       <button
-        className='search-btn bg-green-600 text-green-100 outline-none border-none rounded-[22px] text-lg font-medium py-[10px] px-[22px] cursor-pointer hover:text-white'
-        onClick={() => router.push(searchQuery==="" ? `/products` :`search/${searchQuery}`)}
+        className='search-btn bg-green-600 text-green-100 outline-none border-none rounded-[22px] text-lg font-medium py-2.5 px-[22px] cursor-pointer hover:text-white hover:scale-105'
+        onClick={() => router.push(searchQuery==="" ? `/products/all` :`products/${searchQuery}`)}
       >
         Find it!
       </button>

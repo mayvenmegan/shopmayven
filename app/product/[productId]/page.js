@@ -26,19 +26,15 @@ export default function ProductPage () {
     if (window.history.length > 1) {
       router.back();
     } else {
-      router.push('/products'); 
+      router.push('/products/all'); 
     }
   };
-
 
   useEffect(() => {
     index.getObject(productId).then(object => {
       setProduct(object);
-      // console.log(object);
-
-      
+      // console.log(object);    
     });
-
   }, [])
 
 

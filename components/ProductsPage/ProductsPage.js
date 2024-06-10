@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-
+import Image from 'next/image';
 import searchClient from '@/components/algolia';
 import replaceAndRemoveChar from '@/utils/replaceAndRemoveChar';
 import replaceAndRemoveDash from '@/utils/replaceAndRemoveDash';
@@ -26,7 +26,7 @@ const ProductsPage = ({ params }) => {
       indexName={process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME}
       initialUiState={{
         prod_SHOPMAYVEN: {
-          query: replaceAndRemoveDash(params.id),
+          query:params.id !== "all" ? replaceAndRemoveDash(params.id) : "",
           page: 1,
         },
       }}
@@ -54,9 +54,19 @@ const ProductsPage = ({ params }) => {
                       className='open-product-page'
                     >
                       <article>
-                        <div className='max-w-[180px] h-[180px]'>
-                          <img className='w-full h-full !object-contain' src={hit.productImageURL} alt='product-img' />
+                        <div className='relative w-[180px] h-[180px]'>
+                          <Image
+                          src={hit.productImageURL} 
+                          alt= {`${hit.productTitle}`}
+                          fill
+                          style={{
+                            objectFit: "contain"
+                          }}
+                          sizes='33vw'
+                          priority
+                          />
                         </div>
+
                         <h3 className='w-full text-base font-extrabold leading-tight'>
                           {hit.productTitle}
                         </h3>
