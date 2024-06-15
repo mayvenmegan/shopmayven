@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { FaLocationDot } from 'react-icons/fa6';
 
 import replaceAndRemoveChar from '@/utils/replaceAndRemoveChar';
@@ -10,7 +9,7 @@ function capitalizeFirstLetter(str) {
     return str[0].toUpperCase() + str.slice(1);
   }
 const ProductPageRight = ({product}) => {
-    const router = useRouter();
+
   return (
     <div className='max-w-[60%] flex flex-col gap-10 max-[750px]:max-w-full'>
     {/* Location details */}
@@ -64,17 +63,14 @@ const ProductPageRight = ({product}) => {
           {/* Brand Values */}
           {product.brandValues.map((brandValue, indexName) => {
             return (
-              <div
+              <Link
                 className='py-2.5 px-5 rounded-lg border border-green-600 text-green-600 bg-green-100 font-medium flex items-center justify-center cursor-pointer hover:shadow-md	'
                 key={brandValue}
-                onClick={() =>
-                  router.push(
-                    `/products/${replaceAndRemoveChar(brandValue)}`
-                  )
-                }
+                href={`/products/${replaceAndRemoveChar(brandValue)}`}
+
               >
                 {brandValue}
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -90,17 +86,13 @@ const ProductPageRight = ({product}) => {
         <div className='grid grid-cols-2 gap-2.5'>
           {product.productLabelClaims.map((productClaim) => {
             return (
-              <div
-                className='py-2.5 px-5 rounded-lg border border-[#ff5a16] text-[#ff5a16] bg-[#fff0ea] font-medium flex items-center justify-center cursor-pointer hover:shadow-md'
+              <Link
+                className='py-2.5 px-5 rounded-lg no-underline border border-[#ff5a16] text-[#ff5a16] bg-[#fff0ea] font-medium flex items-center justify-center cursor-pointer hover:shadow-md'
                 key={productClaim}
-                onClick={() =>
-                  router.push(
-                    `/products/${replaceAndRemoveChar(productClaim)}`
-                  )
-                }
+                href={`/products/${replaceAndRemoveChar(productClaim)}`}
               >
                 {productClaim}
-              </div>
+              </Link>
             );
           })}
         </div>
@@ -114,17 +106,14 @@ const ProductPageRight = ({product}) => {
         <div className='grid grid-cols-2 gap-2.5'>
           {product.productAttributes.map((productAttribute) => {
             return (
-              <div
-                className='py-2.5 px-5 rounded-lg border border-[#6E72A0] text-[#6E72A0] bg-[#eaecff] font-medium flex items-center justify-center cursor-pointer hover:shadow-md'
+              <Link
+                className='py-2.5 px-5 rounded-lg no-underline border border-[#6E72A0] text-[#6E72A0] bg-[#eaecff] font-medium flex items-center justify-center cursor-pointer hover:shadow-md'
                 key={productAttribute}
-                onClick={() =>
-                  router.push(
-                    `/products/${replaceAndRemoveChar(productAttribute)}`
-                  )
-                }
+                href={`/products/${replaceAndRemoveChar(productAttribute)}`}
+
               >
                 {capitalizeFirstLetter(productAttribute)}
-              </div>
+              </Link>
             );
           })}
         </div>
