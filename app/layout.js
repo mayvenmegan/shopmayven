@@ -11,7 +11,7 @@ export const metadata = {
   description: 'Shopmayven: A Place that helps you shop brands with purpose',
   twitter:{
     card:"summary_large_image",
-    title: "shopmayven opengraph",
+    title: "Shopmayven",
     
   },
   metadataBase: new URL ("https://www.shopmayven.co/"),

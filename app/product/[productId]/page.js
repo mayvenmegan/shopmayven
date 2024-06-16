@@ -19,11 +19,36 @@ const getPost = cache(async (productObjectId) => {
 
 export async function generateMetadata ({params, searchParams}) {
   // console.log(params, searchParams.id)
-  // const productData = await getPost(searchParams.id)
+  const productData = await getPost(searchParams.id)
   // console.log(productData)
   return {
     title: replaceAndRemoveDash(params.productId) + " ~ Product",
     description: `It is the product page of ${params.productId} product on shopmayven`,
+    openGraph: {
+    title: productData.productTitle,
+    description: `${productData.productTitle} is a product of ${productData.brand} of ${productData.productType} category`,
+    url: `https://www.shopmayven.co/product/${params.productId}?id=${searchParams.id}`,
+    siteName: "Shopmayven",
+    type: 'website',
+    images: [
+      {
+        url: `/api/og?productImageURL=${productData.productImageURL}`,
+        secureUrl: `/api/og?productImageURL=${productData.productImageURL}`,
+        width: 1200,
+        height: 630,
+        alt: productData.productTitle,
+      }
+    ],
+    twitter:{
+      card:"summary_large_image",
+      title: productData.productTitle,
+      description: `${productData.productTitle} is a product of ${productData.brand} of ${productData.productType} category`,
+      url: `https://www.shopmayven.co/product/${params.productId}?id=${searchParams.id}`,
+      siteName: "Shopmayven",
+      
+    },
+
+  },
   }
 }                                 
 

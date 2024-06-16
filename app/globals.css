@@ -3,7 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+* {
+  font-family: Cabin, sans-serif;
+}
 
 @keyframes colorChange {
   0% {
