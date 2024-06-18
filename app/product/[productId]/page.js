@@ -32,8 +32,8 @@ export async function generateMetadata ({params, searchParams}) {
     type: 'website',
     images: [
       {
-        url: `/api/og?productImageURL=${productData.productImageURL}`,
-        secureUrl: `/api/og?productImageURL=${productData.productImageURL}`,
+        url: productData.productImageURL,
+        secureUrl: productData.productImageURL,
         width: 1200,
         height: 630,
         alt: productData.productTitle,

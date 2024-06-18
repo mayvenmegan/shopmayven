@@ -36,7 +36,6 @@
   width: 60%;
 }
 
-
 .ais-SearchBox-input {
   box-shadow: rgba(32, 176, 75, 0.3) 0 1px 4px 0 inset;
   border-radius: 6px;
@@ -65,9 +64,7 @@
   outline: currentcolor none medium;
 }
 
-
 @media screen and (max-width:1050px) {
-
   .ais-SearchBox{
     width: 70%;
   }
